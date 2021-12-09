@@ -1,6 +1,7 @@
 // Import express package
 const express = require('express');
 const homeRoutes = require('./routes/homeroutes')
+const notes = require('./routes/note');
 
  // Require the JSON file and assign it to a variable called `termData`
 // const noteData = require('./db/db.json');
@@ -15,10 +16,7 @@ app.use(express.static('public'));
 
 
 app.use(homeRoutes);
-// app.get('/', (req, res) => res.send('Visit http://localhost:3001/api'));
-
-// res.json() allows us to return JSON instead of a buffer, string, or static file
-// app.get('/api/notes', (req, res) => res.json(noteData));
+app.use(notes);
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
