@@ -1,4 +1,4 @@
-//create route outside server
+//create route outside server file (use Router)
 const path = require('path');
 const { readFromFile, readAndAppend,writeToFile} = require('../helpers/fsUtils');
 const router = require('express').Router();
@@ -49,10 +49,5 @@ router.delete('/api/notes/:id', (req, res) => {
       res.json(`Item ${noteId} has been deleted 🗑️`);
     });
 });
-
-
-
-
-
 
   module.exports = router;
